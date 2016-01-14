@@ -99,5 +99,25 @@ it "imports the 5th entry" do
   entry_five = book.entries[4]
   check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
     end
+
+    it "imports the 1st entry from entries_2.csv" do
+        book.import_from_csv("entries_2.csv")
+        # Check the first entry
+        entry_one = book.entries[0]
+        check_entry(entry_one, "Alicia", "050-329-3065", "alprather@gmail.com")
+    end
+    it "imports the 2nd entry from entries_2.csv" do
+      book.import_from_csv("entries_2.csv")
+      # Check the second entry
+      entry_two = book.entries[1]
+      check_entry(entry_two, "Lauren", "949-229-1204", "aliprather@yahoo.com")
+  end
+
+  it "imports the 3rd entry from entries_2.csv" do
+  book.import_from_csv("entries_2.csv")
+  # Check the third entry
+    entry_three = book.entries[2]
+   check_entry(entry_three, "Prather", "949-361-1749", "aprather@gsad.sch.ae")
+ end
   end
  end
